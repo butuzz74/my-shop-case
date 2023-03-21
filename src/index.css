@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+nav {
+  padding: 0 20px;
+}
+.main {
+  min-height: calc(100vh - 70px - 60px);
+  max-width: 80%;
+  margin: 0 auto;
+}
+.goods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #25cc2d;
+  border-radius: 6px;
+}
+.card-content {
+  flex-grow: 1;
+}
+.cart {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 100;
+  padding: 1rem;
+}
+@media (min-width: 780px) {
+  .cart {
+    top: 5rem;
+    bottom: unset;
+  }
+}
+.basketlist {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+  max-width: 95%;
+  background-color: #fff;
+  border-radius: 5px;
+  animation: show 250ms ease-in-out; 
+}
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate(-70%, -70%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+.basket-close {
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #fff;
+}
+.basket-delete {
+  cursor: pointer;
+}
+.add-remove {
+  padding-right: 1rem;
+  color: #000;
+  cursor: pointer;
+}
+#toast-container {
+  top: 3rem !important;
+  right: 8rem;
+  animation: fade-in 250ms ease-in-out;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
